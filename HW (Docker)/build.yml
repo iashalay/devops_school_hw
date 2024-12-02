@@ -1,0 +1,14 @@
+services:
+  app:
+    image: hw_dock/app
+    build:
+      context: .
+      dockerfile: app.Dockerfile
+    depends_on:
+      - builder
+
+  builder:
+    image: hw_dock/app_builder
+    build:
+      context: .
+      dockerfile: builder.Dockerfile
